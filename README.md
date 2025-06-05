@@ -48,6 +48,13 @@ Use MongoDB Atlas and load the `sample_analytics` dataset.
 ### a. Environment Setup
 
 ```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+then:
+
+```bash
 pip install --upgrade pip
 pip install dagster dagster-embedded-elt dagster-webserver bson pymongo
 ```
