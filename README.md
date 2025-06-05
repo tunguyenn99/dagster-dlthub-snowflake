@@ -1,6 +1,6 @@
 # 📊 Dagster-MongoDB-Snowflake Pipeline
 
-> This project builds an ETL pipeline using **Dagster** and **DLT**, connecting MongoDB (Atlas) to Snowflake to support data analysis tasks such as clustering, classification, and regression.
+> This project builds an ETL pipeline using **Dagster** and **DLT**, connecting MongoDB (Atlas) to Snowflake to support data analysis tasks such as clustering, clustering, and regression.
 
 ---
 
@@ -140,7 +140,7 @@ done
 Pipeline will run on schedules by definied jobs:
 
 - `data/` – General aggregation and clustering
-- `data_classification_task/` – Classification output
+- `data_clustering_task/` – Clustering output
 - `data_regression_task/` – Regression prediction
 
 Pipeline will react to new files in `datalake_example/`. It will process and store results in:

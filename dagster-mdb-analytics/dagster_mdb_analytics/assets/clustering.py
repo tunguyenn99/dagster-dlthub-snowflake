@@ -16,7 +16,7 @@ from yellowbrick.cluster import KElbowVisualizer
 @asset(deps=['dlt_mongodb_accounts', 'dlt_mongodb_transactions'])
 def account_transaction_features(snowflake: SnowflakeResource) -> pd.DataFrame:
     """
-    Join accounts and transactions to prepare training data for classification tasks
+    Join accounts and transactions to prepare training data for clustering tasks
     """
     query = """
         WITH base_accounts AS (
@@ -52,7 +52,7 @@ def account_transaction_features(snowflake: SnowflakeResource) -> pd.DataFrame:
         df = pd.read_sql(query, conn)
 
     df.fillna(0, inplace=True)  # fill missing values with 0
-    df.to_csv('data_classification_task/account_transaction_features.csv', index=False)
+    df.to_csv('data_clustering_task/account_transaction_features.csv', index=False)
     return df
 
 # ===== FEATURE ENGINEERING ===== #
@@ -61,7 +61,7 @@ def standardized_features() -> pd.DataFrame:
     """
     Perform feature scaling on the extracted features to prepare for clustering.
     """
-    df = pd.read_csv('data_classification_task/account_transaction_features.csv')
+    df = pd.read_csv('data_clustering_task/account_transaction_features.csv')
 
     features = ['CREDIT_LIMIT', 'NUM_TRANSACTIONS', 'TOTAL_VOLUME', 'TOTAL_VALUE', 'AVG_PRICE']
     scaler = StandardScaler()
@@ -70,7 +70,7 @@ def standardized_features() -> pd.DataFrame:
     scaled_df = pd.DataFrame(scaled_array, columns=features)
     scaled_df['ACCOUNT_ID'] = df['ACCOUNT_ID']
 
-    scaled_df.to_csv('data_classification_task/standardized_features.csv', index=False)
+    scaled_df.to_csv('data_clustering_task/standardized_features.csv', index=False)
     return scaled_df
 
 # ===== FINDING ELBOWS ===== #
@@ -79,14 +79,14 @@ def elbow_chart():
     """
     Use Yellowbrick's KElbowVisualizer to determine the optimal number of clusters
     """
-    df = pd.read_csv('data_classification_task/standardized_features.csv')
+    df = pd.read_csv('data_clustering_task/standardized_features.csv')
     X = df.drop(columns=['ACCOUNT_ID'])
 
     model = KMeans(n_init=10, random_state=42)
     visualizer = KElbowVisualizer(model, k=(2, 10), metric='distortion', timings=False)
 
     visualizer.fit(X)
-    visualizer.show(outpath='data_classification_task/elbow_chart.png')
+    visualizer.show(outpath='data_clustering_task/elbow_chart.png')
 
 
 # ===== ACCOUNT SEGMENTATION ===== #
@@ -95,12 +95,12 @@ def account_transaction_clusters() -> pd.DataFrame:
     """
     Apply KMeans clustering on standardized features to segment accounts into distinct groups.
     """
-    df = pd.read_csv('data_classification_task/standardized_features.csv')
+    df = pd.read_csv('data_clustering_task/standardized_features.csv')
     X = df.drop(columns=['ACCOUNT_ID'])
 
-    # Dynamic change n_clusters based on elbow chart (as data_classification_task/elbow_chart.png shows the optimal number of clusters = 5) 
+    # Dynamic change n_clusters based on elbow chart (as data_clustering_task/elbow_chart.png shows the optimal number of clusters = 5) 
     kmeans = KMeans(n_clusters=5, n_init=10, random_state=42)  
     df['CLUSTER'] = kmeans.fit_predict(X)
 
-    df.to_csv('data_classification_task/account_transaction_clusters.csv', index=False)
+    df.to_csv('data_clustering_task/account_transaction_clusters.csv', index=False)
     return df
