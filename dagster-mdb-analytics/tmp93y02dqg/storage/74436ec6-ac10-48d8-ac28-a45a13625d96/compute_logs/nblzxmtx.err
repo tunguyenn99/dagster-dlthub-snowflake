@@ -1,0 +1,27 @@
+[32m2025-06-05 12:51:00 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 74436ec6-ac10-48d8-ac28-a45a13625d96 - 408315 - LOGS_CAPTURED - Started capturing logs in process (pid: 408315).
+[32m2025-06-05 12:51:00 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 74436ec6-ac10-48d8-ac28-a45a13625d96 - 408315 - top_stocks_by_transaction_volume - STEP_START - Started execution of step "top_stocks_by_transaction_volume".
+/home/tunguyenn99/project/dagster-dlt-mdb-snf/dagster-mdb-analytics/dagster_mdb_analytics/assets/transactions.py:67: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  ax = sns.barplot(
+[32m2025-06-05 12:51:01 +0700[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - 74436ec6-ac10-48d8-ac28-a45a13625d96 - 408315 - top_stocks_by_transaction_volume - STEP_FAILURE - Execution of step "top_stocks_by_transaction_volume" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "top_stocks_by_transaction_volume"::
+
+TypeError: format_number() missing 1 required positional argument: 'pos'
+
+Stack Trace:
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/dagster/_core/execution/plan/utils.py", line 54, in op_execution_error_boundary
+    yield
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/dagster/_utils/__init__.py", line 482, in iterate_with_context
+    next_output = next(iterator)
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/dagster/_core/execution/plan/compute_generator.py", line 140, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/dagster/_core/execution/plan/compute_generator.py", line 128, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/dagster-mdb-analytics/dagster_mdb_analytics/assets/transactions.py", line 86, in top_stocks_by_transaction_volume
+    ax.bar_label(container, labels=[format_number(v) for v in container.datavalues])
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/dagster-mdb-analytics/dagster_mdb_analytics/assets/transactions.py", line 86, in <listcomp>
+    ax.bar_label(container, labels=[format_number(v) for v in container.datavalues])
+[0m

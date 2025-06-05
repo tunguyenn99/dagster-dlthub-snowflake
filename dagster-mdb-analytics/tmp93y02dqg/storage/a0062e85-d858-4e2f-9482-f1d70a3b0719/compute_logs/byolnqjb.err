@@ -1,0 +1,12 @@
+[32m2025-06-05 14:39:29 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - a0062e85-d858-4e2f-9482-f1d70a3b0719 - 658066 - LOGS_CAPTURED - Started capturing logs in process (pid: 658066).
+[32m2025-06-05 14:39:29 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - a0062e85-d858-4e2f-9482-f1d70a3b0719 - 658066 - top_products_chart - STEP_START - Started execution of step "top_products_chart".
+/home/tunguyenn99/project/dagster-dlt-mdb-snf/dagster-mdb-analytics/dagster_mdb_analytics/assets/transactions.py:186: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  ax = sns.barplot(data=top, x="num_accounts", y="PRODUCT", palette="viridis")
+[32m2025-06-05 14:39:29 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - a0062e85-d858-4e2f-9482-f1d70a3b0719 - 658066 - top_products_chart - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+[32m2025-06-05 14:39:29 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - a0062e85-d858-4e2f-9482-f1d70a3b0719 - top_products_chart - Writing file at: /home/tunguyenn99/project/dagster-dlt-mdb-snf/dagster-mdb-analytics/tmp93y02dqg/storage/top_products_chart using PickledObjectFilesystemIOManager...
+[32m2025-06-05 14:39:29 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - a0062e85-d858-4e2f-9482-f1d70a3b0719 - 658066 - top_products_chart - ASSET_MATERIALIZATION - Materialized value top_products_chart.
+[32m2025-06-05 14:39:29 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - a0062e85-d858-4e2f-9482-f1d70a3b0719 - 658066 - top_products_chart - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+[32m2025-06-05 14:39:29 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - a0062e85-d858-4e2f-9482-f1d70a3b0719 - 658066 - top_products_chart - STEP_SUCCESS - Finished execution of step "top_products_chart" in 383ms.

@@ -1,0 +1,24 @@
+[32m2025-06-05 12:44:17 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 6dcd84e7-2062-4e7b-84d5-0f54d01574f5 - 388997 - LOGS_CAPTURED - Started capturing logs in process (pid: 388997).
+[32m2025-06-05 12:44:17 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 6dcd84e7-2062-4e7b-84d5-0f54d01574f5 - 388997 - top_stocks_by_transaction_volume - STEP_START - Started execution of step "top_stocks_by_transaction_volume".
+[32m2025-06-05 12:44:17 +0700[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - 6dcd84e7-2062-4e7b-84d5-0f54d01574f5 - 388997 - top_stocks_by_transaction_volume - STEP_FAILURE - Execution of step "top_stocks_by_transaction_volume" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "top_stocks_by_transaction_volume"::
+
+KeyError: 'TOTAL_VOLUME'
+
+Stack Trace:
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/dagster/_core/execution/plan/utils.py", line 54, in op_execution_error_boundary
+    yield
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/dagster/_utils/__init__.py", line 482, in iterate_with_context
+    next_output = next(iterator)
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/dagster/_core/execution/plan/compute_generator.py", line 140, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/dagster/_core/execution/plan/compute_generator.py", line 128, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/dagster-mdb-analytics/dagster_mdb_analytics/assets/transactions.py", line 63, in top_stocks_by_transaction_volume
+    top_selling_10_stocks = stock_summary[stock_summary['TYPE'] == 'sell'].groupby(by='STOCK').sum().sort_values(by='TOTAL_VOLUME', ascending=False).head(10)
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/pandas/core/frame.py", line 6758, in sort_values
+    k = self._get_label_or_level_values(by, axis=axis)
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/pandas/core/generic.py", line 1778, in _get_label_or_level_values
+    raise KeyError(key)
+[0m

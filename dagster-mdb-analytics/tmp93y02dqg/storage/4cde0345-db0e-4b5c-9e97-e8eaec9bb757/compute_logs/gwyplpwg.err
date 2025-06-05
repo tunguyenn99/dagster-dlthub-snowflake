@@ -1,0 +1,5 @@
+[32m2025-06-05 15:27:37 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 4cde0345-db0e-4b5c-9e97-e8eaec9bb757 - 794557 - LOGS_CAPTURED - Started capturing logs in process (pid: 794557).
+[32m2025-06-05 15:27:37 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 4cde0345-db0e-4b5c-9e97-e8eaec9bb757 - 794557 - regression_model_per_type - STEP_START - Started execution of step "regression_model_per_type".
+[32m2025-06-05 15:27:38 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 4cde0345-db0e-4b5c-9e97-e8eaec9bb757 - 794557 - regression_model_per_type - STEP_OUTPUT - Yielded output "result" of type "Nothing". (Type check passed).
+[32m2025-06-05 15:27:38 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 4cde0345-db0e-4b5c-9e97-e8eaec9bb757 - 794557 - regression_model_per_type - ASSET_MATERIALIZATION - Materialized value regression_model_per_type.
+[32m2025-06-05 15:27:38 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 4cde0345-db0e-4b5c-9e97-e8eaec9bb757 - 794557 - regression_model_per_type - STEP_SUCCESS - Finished execution of step "regression_model_per_type" in 647ms.

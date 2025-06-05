@@ -1,0 +1,7 @@
+[32m2025-06-05 11:33:54 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - f975aabe-b3f0-4a5c-9917-bb4740ea722a - 191366 - LOGS_CAPTURED - Started capturing logs in process (pid: 191366).
+[32m2025-06-05 11:33:54 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - f975aabe-b3f0-4a5c-9917-bb4740ea722a - 191366 - mongodb - STEP_START - Started execution of step "mongodb".
+[32m2025-06-05 11:35:07 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - f975aabe-b3f0-4a5c-9917-bb4740ea722a - 191366 - mongodb - STEP_OUTPUT - Yielded output "dlt_mongodb_accounts" of type "Nothing". (Type check passed).
+[32m2025-06-05 11:35:07 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - f975aabe-b3f0-4a5c-9917-bb4740ea722a - 191366 - mongodb - ASSET_MATERIALIZATION - Materialized value dlt_mongodb_accounts.
+[32m2025-06-05 11:35:07 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - f975aabe-b3f0-4a5c-9917-bb4740ea722a - 191366 - mongodb - STEP_OUTPUT - Yielded output "dlt_mongodb_transactions" of type "Nothing". (Type check passed).
+[32m2025-06-05 11:35:07 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - f975aabe-b3f0-4a5c-9917-bb4740ea722a - 191366 - mongodb - ASSET_MATERIALIZATION - Materialized value dlt_mongodb_transactions.
+[32m2025-06-05 11:35:07 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - f975aabe-b3f0-4a5c-9917-bb4740ea722a - 191366 - mongodb - STEP_SUCCESS - Finished execution of step "mongodb" in 1m12s.

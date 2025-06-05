@@ -1,0 +1,12 @@
+[32m2025-06-05 12:53:50 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 6db8a01d-2e5a-49cb-a129-dd55fb365c49 - 416663 - LOGS_CAPTURED - Started capturing logs in process (pid: 416663).
+[32m2025-06-05 12:53:50 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 6db8a01d-2e5a-49cb-a129-dd55fb365c49 - 416663 - top_selling_stocks_by_transaction_volume - STEP_START - Started execution of step "top_selling_stocks_by_transaction_volume".
+/home/tunguyenn99/project/dagster-dlt-mdb-snf/dagster-mdb-analytics/dagster_mdb_analytics/assets/transactions.py:67: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  ax = sns.barplot(
+[32m2025-06-05 12:53:51 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 6db8a01d-2e5a-49cb-a129-dd55fb365c49 - 416663 - top_selling_stocks_by_transaction_volume - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+[32m2025-06-05 12:53:51 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 6db8a01d-2e5a-49cb-a129-dd55fb365c49 - top_selling_stocks_by_transaction_volume - Writing file at: /home/tunguyenn99/project/dagster-dlt-mdb-snf/dagster-mdb-analytics/tmp93y02dqg/storage/top_selling_stocks_by_transaction_volume using PickledObjectFilesystemIOManager...
+[32m2025-06-05 12:53:51 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 6db8a01d-2e5a-49cb-a129-dd55fb365c49 - 416663 - top_selling_stocks_by_transaction_volume - ASSET_MATERIALIZATION - Materialized value top_selling_stocks_by_transaction_volume.
+[32m2025-06-05 12:53:51 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 6db8a01d-2e5a-49cb-a129-dd55fb365c49 - 416663 - top_selling_stocks_by_transaction_volume - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+[32m2025-06-05 12:53:51 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 6db8a01d-2e5a-49cb-a129-dd55fb365c49 - 416663 - top_selling_stocks_by_transaction_volume - STEP_SUCCESS - Finished execution of step "top_selling_stocks_by_transaction_volume" in 492ms.

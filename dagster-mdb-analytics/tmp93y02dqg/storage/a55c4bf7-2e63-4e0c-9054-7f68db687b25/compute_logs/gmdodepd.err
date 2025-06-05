@@ -1,0 +1,7 @@
+[32m2025-06-05 15:10:10 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - a55c4bf7-2e63-4e0c-9054-7f68db687b25 - 744876 - LOGS_CAPTURED - Started capturing logs in process (pid: 744876).
+[32m2025-06-05 15:10:10 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - a55c4bf7-2e63-4e0c-9054-7f68db687b25 - 744876 - elbow_chart - STEP_START - Started execution of step "elbow_chart".
+[32m2025-06-05 15:10:21 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - a55c4bf7-2e63-4e0c-9054-7f68db687b25 - 744876 - elbow_chart - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+[32m2025-06-05 15:10:21 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - a55c4bf7-2e63-4e0c-9054-7f68db687b25 - elbow_chart - Writing file at: /home/tunguyenn99/project/dagster-dlt-mdb-snf/dagster-mdb-analytics/tmp93y02dqg/storage/elbow_chart using PickledObjectFilesystemIOManager...
+[32m2025-06-05 15:10:21 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - a55c4bf7-2e63-4e0c-9054-7f68db687b25 - 744876 - elbow_chart - ASSET_MATERIALIZATION - Materialized value elbow_chart.
+[32m2025-06-05 15:10:21 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - a55c4bf7-2e63-4e0c-9054-7f68db687b25 - 744876 - elbow_chart - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+[32m2025-06-05 15:10:21 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - a55c4bf7-2e63-4e0c-9054-7f68db687b25 - 744876 - elbow_chart - STEP_SUCCESS - Finished execution of step "elbow_chart" in 11.14s.

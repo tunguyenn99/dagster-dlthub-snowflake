@@ -1,0 +1,117 @@
+[32m2025-06-05 15:09:23 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - a48c00d7-1998-494d-a775-8fc9f4a2af79 - 742066 - LOGS_CAPTURED - Started capturing logs in process (pid: 742066).
+[32m2025-06-05 15:09:23 +0700[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - a48c00d7-1998-494d-a775-8fc9f4a2af79 - 742066 - mongodb - STEP_START - Started execution of step "mongodb".
+[32m2025-06-05 15:09:26 +0700[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - a48c00d7-1998-494d-a775-8fc9f4a2af79 - 742066 - mongodb - STEP_FAILURE - Execution of step "mongodb" failed.
+
+KeyboardInterrupt
+
+Stack Trace:
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/dagster/_core/execution/plan/execute_plan.py", line 245, in dagster_event_sequence_for_step
+    for step_event in check.generator(step_events):
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/dagster/_core/execution/plan/execute_step.py", line 499, in core_dagster_event_sequence_for_step
+    for user_event in _step_output_error_checked_user_event_sequence(
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/dagster/_core/execution/plan/execute_step.py", line 183, in _step_output_error_checked_user_event_sequence
+    for user_event in user_event_sequence:
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/dagster/_core/execution/plan/execute_step.py", line 87, in _process_asset_results_to_events
+    for user_event in user_event_sequence:
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/dagster/_core/execution/plan/compute.py", line 197, in execute_core_compute
+    for step_output in _yield_compute_results(step_context, inputs, compute_fn, compute_context):
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/dagster/_core/execution/plan/compute.py", line 166, in _yield_compute_results
+    for event in iterate_with_context(
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/dagster/_utils/__init__.py", line 482, in iterate_with_context
+    next_output = next(iterator)
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/dagster-mdb-analytics/dagster_mdb_analytics/assets/mongodb.py", line 30, in dlt_asset_factory
+    yield from dlt.run(context=context, write_disposition="merge")
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/dagster_embedded_elt/dlt/dlt_event_iterator.py", line 77, in __next__
+    return next(self._inner_iterator)
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/dagster_embedded_elt/dlt/resource.py", line 286, in _run
+    load_info = dlt_pipeline.run(dlt_source, **kwargs)
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/dlt/pipeline/pipeline.py", line 226, in _wrap
+    step_info = f(self, *args, **kwargs)
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/dlt/pipeline/pipeline.py", line 275, in _wrap
+    return f(self, *args, **kwargs)
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/dlt/pipeline/pipeline.py", line 717, in run
+    self._sync_destination(destination, staging, dataset_name)
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/dlt/pipeline/pipeline.py", line 180, in _wrap
+    rv = f(self, *args, **kwargs)
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/dlt/pipeline/pipeline.py", line 789, in _sync_destination
+    remote_state = self._restore_state_from_destination()
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/dlt/pipeline/pipeline.py", line 1544, in _restore_state_from_destination
+    state = load_pipeline_state_from_destination(self.pipeline_name, job_client)
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/dlt/pipeline/state_sync.py", line 120, in load_pipeline_state_from_destination
+    state = client.get_stored_state(pipeline_name)
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/dlt/destinations/job_client_impl.py", line 429, in get_stored_state
+    with self.sql_client.execute_query(query, pipeline_name) as cur:
+  File "/usr/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/dlt/destinations/sql_client.py", line 417, in _wrap_gen
+    return (yield from f(self, *args, **kwargs))
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/dlt/destinations/impl/snowflake/sql_client.py", line 113, in execute_query
+    curr.execute(query, db_args, num_statements=0)
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/snowflake/connector/cursor.py", line 994, in execute
+    ret = self._execute_helper(query, **kwargs)
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/snowflake/connector/cursor.py", line 700, in _execute_helper
+    ret = self._connection.cmd_query(
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/snowflake/connector/connection.py", line 1388, in cmd_query
+    ret = self.rest.request(
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/snowflake/connector/network.py", line 502, in request
+    return self._post_request(
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/snowflake/connector/network.py", line 750, in _post_request
+    ret = self.fetch(
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/snowflake/connector/network.py", line 865, in fetch
+    ret = self._request_exec_wrapper(
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/snowflake/connector/network.py", line 915, in _request_exec_wrapper
+    return_object = self._request_exec(
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/snowflake/connector/network.py", line 1082, in _request_exec
+    raw_ret = session.request(
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/snowflake/connector/vendored/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/snowflake/connector/vendored/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/snowflake/connector/vendored/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/snowflake/connector/vendored/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/snowflake/connector/vendored/urllib3/connectionpool.py", line 467, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/snowflake/connector/vendored/urllib3/connectionpool.py", line 462, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.8/http/client.py", line 1348, in getresponse
+    response.begin()
+  File "/usr/lib/python3.8/http/client.py", line 316, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.8/http/client.py", line 277, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/lib/python3.8/socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/snowflake/connector/vendored/urllib3/contrib/pyopenssl.py", line 330, in recv_into
+    if not util.wait_for_read(self.socket, self.socket.gettimeout()):
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/snowflake/connector/vendored/urllib3/util/wait.py", line 145, in wait_for_read
+    return wait_for_socket(sock, read=True, timeout=timeout)
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/snowflake/connector/vendored/urllib3/util/wait.py", line 106, in poll_wait_for_socket
+    return bool(_retry_on_intr(do_poll, timeout))
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/snowflake/connector/vendored/urllib3/util/wait.py", line 43, in _retry_on_intr
+    return fn(timeout)
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/snowflake/connector/vendored/urllib3/util/wait.py", line 104, in do_poll
+    return poll_obj.poll(t)
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/snowflake/connector/cursor.py", line 689, in interrupt_handler
+    raise KeyboardInterrupt
+
+The above exception occurred during handling of the following exception:
+OpenSSL.SSL.WantReadError
+
+Stack Trace:
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/snowflake/connector/vendored/urllib3/contrib/pyopenssl.py", line 318, in recv_into
+    return self.connection.recv_into(*args, **kwargs)
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/OpenSSL/SSL.py", line 2321, in recv_into
+    self._raise_ssl_error(self._ssl, result)
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/OpenSSL/SSL.py", line 1999, in _raise_ssl_error
+    raise WantReadError()
+
+The above exception occurred during handling of the following exception:
+TypeError: getresponse() got an unexpected keyword argument 'buffering'
+
+Stack Trace:
+  File "/home/tunguyenn99/project/dagster-dlt-mdb-snf/venv/lib/python3.8/site-packages/snowflake/connector/vendored/urllib3/connectionpool.py", line 458, in _make_request
+    httplib_response = conn.getresponse(buffering=True)
+[0m

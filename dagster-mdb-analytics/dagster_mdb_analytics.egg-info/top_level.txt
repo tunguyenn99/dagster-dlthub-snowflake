@@ -1,0 +1,1 @@
+dagster_mdb_analytics

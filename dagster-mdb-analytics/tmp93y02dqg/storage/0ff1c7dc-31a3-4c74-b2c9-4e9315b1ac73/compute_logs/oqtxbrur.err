@@ -1,0 +1,9 @@
+[32m2025-06-05 16:28:03 +0700[0m - dagster - [34mDEBUG[0m - adhoc_job - 0ff1c7dc-31a3-4c74-b2c9-4e9315b1ac73 - 948313 - LOGS_CAPTURED - Started capturing logs in process (pid: 948313).
+[32m2025-06-05 16:28:03 +0700[0m - dagster - [34mDEBUG[0m - adhoc_job - 0ff1c7dc-31a3-4c74-b2c9-4e9315b1ac73 - 948313 - adhoc_daily_transaction_forecast - STEP_START - Started execution of step "adhoc_daily_transaction_forecast".
+/home/tunguyenn99/project/dagster-dlt-mdb-snf/dagster-mdb-analytics/dagster_mdb_analytics/assets/adhoc.py:31: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql(query, conn)
+16:28:05 - cmdstanpy - INFO - Chain [1] start processing
+16:28:07 - cmdstanpy - INFO - Chain [1] done processing
+[32m2025-06-05 16:28:31 +0700[0m - dagster - [34mDEBUG[0m - adhoc_job - 0ff1c7dc-31a3-4c74-b2c9-4e9315b1ac73 - 948313 - adhoc_daily_transaction_forecast - STEP_OUTPUT - Yielded output "result" of type "Nothing". (Type check passed).
+[32m2025-06-05 16:28:31 +0700[0m - dagster - [34mDEBUG[0m - adhoc_job - 0ff1c7dc-31a3-4c74-b2c9-4e9315b1ac73 - 948313 - adhoc_daily_transaction_forecast - ASSET_MATERIALIZATION - Materialized value adhoc_daily_transaction_forecast.
+[32m2025-06-05 16:28:31 +0700[0m - dagster - [34mDEBUG[0m - adhoc_job - 0ff1c7dc-31a3-4c74-b2c9-4e9315b1ac73 - 948313 - adhoc_daily_transaction_forecast - STEP_SUCCESS - Finished execution of step "adhoc_daily_transaction_forecast" in 27.43s.
