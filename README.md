@@ -108,7 +108,7 @@ cp .sample-env .env
 ## 🧰 4. Project Folder Usage
 
 ```bash
-for folder in assets jobs mongodb resources schedules sensors partitions; do
+for folder in resources assets sensors partitions jobs schedules; do
   mkdir -p dagster_mdb_analytics/$folder
   touch dagster_mdb_analytics/$folder/__init__.py
 done
