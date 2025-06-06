@@ -1,12 +1,26 @@
-# 📊 Dagster-MongoDB-Snowflake Pipeline
+# 📊 Dagster-MongoDB-Snowflake ETL Pipeline
 
-> A modern ETL pipeline combining the power of **Dagster** for orchestration, **DLT** for declarative data loading, and **MongoDB Atlas** as the data source — all seamlessly integrated into **Snowflake** for advanced analytics.  
->  
-> Designed to support end-to-end data workflows including **clustering**, **regression modeling**, and automated **scheduling via sensors**, this pipeline is modular, production-ready, and highly extensible for real-world data projects.
+A **modern, production-ready ETL pipeline** that connects:
 
-<div align="center">
-  <img src="images/dagster-dlt.png" alt="Dagster DLT" height=400 style="margin-right: 40px;">
-</div>
+- **MongoDB Atlas** as the **source** database  
+- **DLT (Data Load Tool)** for **declarative data loading and transformation**  
+- **Dagster** for **workflow orchestration and automation**  
+- **Snowflake** as the **destination** for advanced data analytics
+
+---
+
+## 🔧 Key Features
+
+- End-to-end data pipeline: from extraction (MongoDB) to loading (Snowflake)
+- Supports **clustering**, **regression modeling**, and other analytics use cases
+- Automated scheduling with **Dagster sensors** and **schedules**
+- Modular, extensible, and ready for production deployments
+
+---
+
+## 🖼️ Architecture
+
+![Dagster DLT Pipeline](images/dagster-dlt.png)
 
 ---
 
