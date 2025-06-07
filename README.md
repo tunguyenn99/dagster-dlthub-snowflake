@@ -7,6 +7,8 @@ A **modern, production-ready ETL pipeline** that connects:
 - **Dagster** for **workflow orchestration and automation**  
 - **Snowflake** as the **destination** for advanced data analytics
 
+![Tech Stack](./images/project_architecture.jpg)
+
 ---
 
 ## 🔧 Key Features
